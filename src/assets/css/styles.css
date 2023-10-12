@@ -1,0 +1,275 @@
+    #wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f8ff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    .container {
+        background: #ffffff;
+        padding: 1em;
+        border-radius: 1em;
+        box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+        text-align: center;
+        max-width: 100%;
+        max-height: 90vh;
+        box-sizing: border-box;
+    }
+
+
+    .title {
+        color: #ff4500;
+        margin-bottom: 0.5em;
+        text-shadow: 0.1em 0.1em 0.1em #aaa;
+        font-size: 1.5em;
+    }
+
+    .description,
+    .guesses-left,
+    .result-text,
+    .user-stats p {
+        font-size: 0.8em;
+        color: #483d8b;
+        margin-bottom: 0.5em;
+    }
+
+    .message {
+        font-size: 1em;
+        font-weight: bold;
+        margin-top: 0.5em;
+        color: #fff;
+        padding: 0.5em;
+        background-color: #32cd32;
+        border-radius: 0.5em;
+        box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
+    }
+
+    .input-area,
+    .keyboard-keys,
+    .feedback-container,
+    .color-states,
+    .game-stats {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+
+    .feedback-container,
+    .game-stats {
+        width: 45vw;
+    }
+
+    .guess-input {
+        padding: 0.5em;
+        border: 0.05em solid #ddd;
+        border-radius: 0.5em;
+        font-size: 0.8em;
+        box-shadow: inset 0 0 0.2em rgba(0, 0, 0, 0.1);
+        flex: 1;
+    }
+
+    .submit-button,
+    #resetButton {
+        padding: 0.5em 1em;
+        color: white;
+        border: none;
+        border-radius: 0.5em;
+        cursor: pointer;
+        box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.1);
+    }
+
+    .submit-button {
+        background-color: #ff69b4;
+    }
+
+    .submit-button:disabled {
+        background-color: #eee;
+        color: #ccc;
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+
+    .submit-button:hover,
+    #resetButton:hover {
+        filter: brightness(0.9);
+    }
+
+    #resetButton {
+        background-color: #20b2aa;
+        display: none;
+    }
+
+    .keyboard-button,
+    .circle {
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        background-color: #add8e6;
+        border: 0.05em solid #ddd;
+        margin: 0.2em;
+        font-size: 0.8em;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.1);
+    }
+
+    .keyboard-button:hover {
+        transform: scale(1.1);
+    }
+
+    .green,
+    .keyboard-button.green {
+        background-color: #32cd32;
+        color: #fff;
+    }
+
+    .yellow,
+    .keyboard-button.yellow {
+        background-color: #ffff00;
+        color: #000;
+    }
+
+    .grey,
+    .keyboard-button.grey {
+        background-color: #d3d3d3;
+        color: #fff;
+    }
+
+    .keyboard-button:disabled {
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+
+    .user-stats,
+    .color-states {
+        margin-top: 0.5em;
+        text-align: left;
+        font-size: 0.9em;
+    }
+
+    .color-key span {
+        width: 1.2em;
+        height: 1.2em;
+        border-radius: 50%;
+        margin-right: 0.5em;
+        display: flex;
+    }
+
+    #shareButton {
+        display: none;
+        margin: auto;
+        padding: 0.5em 1em;
+        color: white;
+        background-color: #4CAF50;  /* or any other color you like */
+        border: none;
+        border-radius: 0.5em;
+        cursor: pointer;
+        box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.1);
+    }
+
+    /* Additional rules */
+    .stat-title {
+        display: inline-block;
+        width: 150px;
+    }
+
+    /* Your existing CSS */
+
+@media (max-width: 375px) {
+    /* Adjustments for 375x667 screen */
+    
+    /* Text size changes */
+    .description,
+    .guesses-left,
+    .result-text,
+    .user-stats p {
+        font-size: 0.6em;
+    }
+    .title {
+        font-size: 1.2em;
+    }
+
+    .color-states {
+        margin-top: auto;
+        text-align: left;
+        font-size: 0.6em;
+    }
+
+    .color-key span {
+        width: 0.8em;
+        height: 0.8em;
+        border-radius: 50%;
+    }
+
+    /* Feedback and game-stats container */
+    .feedback-container,
+    .game-stats {
+        width: 100%;
+        font-size: 0.6em;
+    }
+
+    /* Keyboard container */
+    .keyboard-container {
+        max-width: 100%;
+        max-height: 100vh;
+        padding: 0.4em;
+    }
+
+    /* Main container */
+    .container {
+        padding: 0.4em;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    /* Buttons and input fields */
+    .submit-button,
+    #resetButton,
+    .guess-input {
+        padding: 0.3em;
+    }
+
+    /* Number and circle buttons */
+    .keyboard-button,
+    .circle {
+        width: 1.5em;
+        height: 1.5em;
+    }
+    
+    /* Additional rules */
+    .stat-title {
+        width: auto;
+    }
+}
+
+
+    .keyboard-container {
+        background: #ffffff;
+        padding: 1em;
+        border-radius: 1em;
+        box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+        text-align: center;
+        max-width: 80%;
+        max-height: 90vh;
+        box-sizing: border-box;
+    }
+
+
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta tags for better SEO and Ads targeting -->
+    <meta name="description" content="Play Number Guessing Game and improve your guessing skills.">
+    <meta name="keywords" content="Number, Game, Guessing, Skill">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- Asynchronous AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8738875399920144"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <h1 class="title">Number Guessing Game</h1>
+            <p class="description">Guess a 3-digit number.</p>
+            <div id="message" class="message"></div>
+            <div class="input-area">
+                <input type="number" id="userGuess" class="guess-input" min="100" max="999" placeholder="100-999">
+            </div>
+
+            <div class="content">
+
+                <!-- Color States -->
+                <div id="colorStates" class="color-states">
+                    <p>Color States:</p>
+                    <div class="color-key">
+                        <span class="color green"></span> Correct Digit
+                    </div>
+                    <div class="color-key">
+                        <span class="color yellow"></span> Correct Digit in Wrong Position
+                    </div>
+                    <div class="color-key">
+                        <span class="color grey"></span> Incorrect Digit
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result and Game Stats -->
+            <div class="result-and-stats">
+                <div id="result" class="result-container">
+                    <div class="feedback-container">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="feedback-container">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="feedback-container">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="feedback-container">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="feedback-container">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="feedback-container">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="game-stats">
+                    <h2>Game Statistics</h2>
+                    <div class="stat-item">
+                        <span class="stat-label">Games Played:</span>
+                        <span class="stat-value" id="gamesPlayed">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Games Won:</span>
+                        <span class="stat-value" id="gamesWon">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Percentage Win:</span>
+                        <span class="stat-value" id="percentageWin">0%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Current Streak:</span>
+                        <span class="stat-value" id="currentStreak">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Max Streak:</span>
+                        <span class="stat-value" id="maxStreak">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="guessesLeft" class="guesses-left">Guesses Left: 6</div>
+            <button id="shareButton">Share Results</button>
+            <button id="resetButton">New
+                Game</button>
+            <button id="clearStatsButton">Clear Stats</button>
+
+            <p id="resultMessage" class="result-text"></p>
+        </div>
+        <div id="keyboardContainer" class="keyboard-container">
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+</body>
+
+</html>

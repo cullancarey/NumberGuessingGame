@@ -339,31 +339,25 @@ export default class GameManager {
 
     generateNumberButtons = () => {
         try {
-            const keyboardContainer = document.getElementById('keyboardContainer');
+            const containerMain = document.getElementById('container-main');
             const userGuessInput = document.getElementById('userGuess');
 
-            if (!keyboardContainer || !userGuessInput) {
+            if (!containerMain || !userGuessInput) {
                 console.warn("Required HTML elements not found");
                 return;
             }
 
-            // Update keyboard layout to include backspace and enter buttons
             const keyboardLayout = [
-                [1, 2, 3],
-                [4, 5, 6],
-                [7, 8, 9],
-                ['<-', 0, '↵']
+                [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '<-', '↵']
             ];
 
-            // Clear existing keyboard if any
-            keyboardContainer.innerHTML = '';
+            const buttonContainer = document.createElement('div');
+            buttonContainer.style.display = 'flex';
+            buttonContainer.style.flexWrap = 'wrap';
+            buttonContainer.style.justifyContent = 'center';
+            buttonContainer.style.gap = '10px'; // Spacing between buttons
 
-            // Generate the keyboard buttons
             keyboardLayout.forEach(row => {
-                const rowDiv = document.createElement('div');
-                rowDiv.style.display = 'flex';
-                rowDiv.style.justifyContent = 'center';
-
                 row.forEach(item => {
                     const button = document.createElement('button');
                     button.innerText = item;
@@ -374,7 +368,6 @@ export default class GameManager {
                         button.className = 'keyboard-keys';
                     }
 
-                    // Number buttons
                     if (typeof item === 'number') {
                         button.id = 'btn' + item;
                         button.addEventListener('click', () => {
@@ -384,29 +377,30 @@ export default class GameManager {
                         });
                     }
 
-                    // Backspace button
                     if (item === '<-') {
                         button.addEventListener('click', () => {
                             userGuessInput.value = this.handleBackspace(userGuessInput.value);
                         });
                     }
 
-                    // Enter (Submit) button
                     if (item === '↵') {
                         button.addEventListener('click', () => {
                             this.checkGuess();
                         });
                     }
 
-                    rowDiv.appendChild(button);
+                    buttonContainer.appendChild(button);
                 });
-
-                keyboardContainer.appendChild(rowDiv);
             });
+
+            containerMain.appendChild(buttonContainer);
+
         } catch (e) {
             console.error("An error occurred in generateNumberButtons:", e);
         }
     };
+
+
 
 
     resetNumberButtons = () => {

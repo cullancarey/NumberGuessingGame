@@ -16,12 +16,13 @@
 
 <body>
     <div id="wrapper">
-        <div class="container">
+        <div id="container-main" class="container">
             <h1 class="title">Number Guessing Game</h1>
             <p class="description">Guess a 3-digit number.</p>
             <div id="message" class="message"></div>
             <div class="input-area">
-                <input type="number" id="userGuess" class="guess-input" min="100" max="999" placeholder="100-999">
+                <input type="tel" id="userGuess" class="guess-input" min="100" max="999" placeholder="100-999"
+                    inputmode="numeric">
             </div>
 
             <div class="content">
@@ -107,8 +108,6 @@
             <button id="clearStatsButton">Clear Stats</button>
 
             <p id="resultMessage" class="result-text"></p>
-        </div>
-        <div id="keyboardContainer" class="keyboard-container">
         </div>
     </div>
     <script type="module" src="js/main.js"></script>

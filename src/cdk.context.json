@@ -5,6 +5,12 @@
     "domain_name": "numberguessinggame.com",
     "file_path": "assets"
   },
+  "development": {
+    "account_id": "693590665244",
+    "region": "us-east-2",
+    "domain_name": "dev.numberguessinggame.com",
+    "file_path": "assets"
+  },
   "hosted-zone:account=151676528673:domainName=numberguessinggame.com:region=us-east-1": {
     "Id": "/hostedzone/Z01007781AKYASMM9GORA",
     "Name": "numberguessinggame.com."

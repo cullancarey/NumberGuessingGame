@@ -16,8 +16,17 @@
 
 <body>
     <div id="wrapper">
-        <div id="container-main" class="container">
+        <!-- Header Section -->
+        <header>
             <h1 class="title">Number Guessing Game</h1>
+            <nav>
+                <!-- Add some navigation links here -->
+                <a href="about_us.html">About Us</a>
+                <a href="#how-to-play">How to Play</a>
+                <a href="#tips">Tips and Tricks</a>
+            </nav>
+        </header>
+        <div id="container-main" class="container">
             <p class="description">Guess a 3-digit number.</p>
             <div id="message" class="message"></div>
             <div class="input-area">
@@ -77,38 +86,46 @@
                     </div>
                 </div>
                 <div class="game-stats">
-                    <h2>Game Statistics</h2>
+                    <h2 class="title">Game Statistics</h2>
                     <div class="stat-item">
-                        <span class="stat-label">Games Played:</span>
+                        <div class="stat-label">Games Played:</div>
                         <span class="stat-value" id="gamesPlayed">0</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-label">Games Won:</span>
+                        <div class="stat-label">Games Won:</div>
                         <span class="stat-value" id="gamesWon">0</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-label">Percentage Win:</span>
+                        <div class="stat-label">Percentage Win:</div>
                         <span class="stat-value" id="percentageWin">0%</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-label">Current Streak:</span>
+                        <div class="stat-label">Current Streak:</div>
                         <span class="stat-value" id="currentStreak">0</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-label">Max Streak:</span>
+                        <div class="stat-label">Max Streak:</div>
                         <span class="stat-value" id="maxStreak">0</span>
                     </div>
                 </div>
             </div>
-
             <div id="guessesLeft" class="guesses-left">Guesses Left: 6</div>
-            <button id="shareButton">Share Results</button>
-            <button id="resetButton">New
-                Game</button>
-            <button id="clearStatsButton">Clear Stats</button>
-
+            <div class="buttons">
+                <button id="shareButton" class="share-button">Share Results</button>
+                <button id="resetButton" class="reset-button">New
+                    Game</button>
+                <button id="clearStatsButton" class="clear-stats-button">Clear Stats</button>
+            </div>
             <p id="resultMessage" class="result-text"></p>
+
         </div>
+        <!-- Footer -->
+        <footer>
+            <nav>
+                <a href="terms_of_service.html">Terms of Service</a>
+                <a href="privacy_policy.html">Privacy Policy</a>
+            </nav>
+        </footer>
     </div>
     <script type="module" src="js/main.js"></script>
 </body>

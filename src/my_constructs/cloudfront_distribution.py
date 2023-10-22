@@ -28,7 +28,7 @@ class CloudfrontDistribution(Construct):
             self,
             f"OriginAccessControlResource",
             origin_access_control_config=cloudfront.CfnOriginAccessControl.OriginAccessControlConfigProperty(
-                name=f"OriginAccessControl",
+                name=f"NGGOriginAccessControl",
                 origin_access_control_origin_type=origin_type,
                 signing_behavior="always",
                 signing_protocol="sigv4",

@@ -3,7 +3,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+/*     min-height: 100vh; */
+}
+
+.scrollable-content {
+    max-height: 70vh;  
+    max-width: 80vw;
+    overflow-y: auto;
 }
 
 body {
@@ -15,7 +21,55 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* New Styles for About Us Page */
+header {
+    width: 100%;
+    padding: .5em;
+    color: #ff4500;
+    text-align: center;
+    font-size: .9em;
+}
+
+nav a {
+    margin: 0 1em;
+    color: #483d8b;
+    text-decoration: none;
+}
+
+#main-content {
+    padding: 2em;
+    background-color: #ffffff;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+    border-radius: 1em;
+    margin: 1em;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #ff4500;
+    margin-bottom: 1em;
+}
+
+p {
+    font-size: 1em;
+    color: #483d8b;
+    line-height: 1.5;
+}
+
+li {
+    font-size: .9em;
+    color: #483d8b;
+    line-height: 1.2;
+}
+
+footer {
+    padding: 1em;
+    color: white;
+    text-align: center;
 }
 
 .container {
@@ -24,9 +78,14 @@ body {
     border-radius: 1em;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
     text-align: center;
-    max-width: 100%;
-    max-height: 90vh;
+    max-width: inherit;
+    max-height: inherit;
     box-sizing: border-box;
+}
+
+.content {
+    max-height: inherit;
+    max-width: inherit;
 }
 
 
@@ -35,15 +94,16 @@ body {
     margin-bottom: 0.5em;
     text-shadow: 0.1em 0.1em 0.1em #aaa;
     font-size: 1.5em;
+    text-align: center
 }
 
 .description,
 .guesses-left,
-.result-text,
-.user-stats p {
+.result-text {
     font-size: 0.8em;
     color: #483d8b;
     margin-bottom: 0.5em;
+    text-align: center
 }
 
 .message {
@@ -59,9 +119,7 @@ body {
 
 .input-area,
 .keyboard-keys,
-.feedback-container,
-.color-states,
-.game-stats {
+.feedback-container  {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -69,10 +127,24 @@ body {
     gap: 0.5em;
 }
 
-.feedback-container,
-.game-stats {
-    width: 45vw;
+/* Game Statistics */
+
+.game-stats .title {
+    text-align: left;
+    font-size: 1em;
 }
+
+.game-stats .stat-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.8em
+}
+
+.stat-value {
+    padding-left: .5em;
+}
+
+/* Game Statistics */
 
 .guess-input {
     padding: 0.5em;
@@ -83,36 +155,59 @@ body {
     flex: 1;
 }
 
-.submit-button,
-#resetButton {
+/* Buttons */
+
+.buttons {
+    display: -webkit-inline-box;
+}
+
+.reset-button {
     padding: 0.5em 1em;
+    margin: auto;
     color: white;
     border: none;
+    font-size: .8em;
     border-radius: 0.5em;
     cursor: pointer;
+    background-color: #20b2aa;
+    display: none;
     box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.1);
 }
 
-.submit-button {
-    background-color: #ff69b4;
-}
-
-.submit-button:disabled {
-    background-color: #eee;
-    color: #ccc;
-    cursor: not-allowed;
-    box-shadow: none;
-}
-
-.submit-button:hover,
-#resetButton:hover {
+.reset-button:hover {
     filter: brightness(0.9);
 }
 
-#resetButton {
+.clear-stats-button {
+    padding: 0.5em 1em;
+    margin: auto;
+    color: white;
+    border: none;
+    font-size: .8em;
+    border-radius: 0.5em;
+    cursor: pointer;
     background-color: #20b2aa;
-    display: none;
+    box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.1);
 }
+
+.clear-stats-button:hover {
+    filter: brightness(0.9);
+}
+
+.share-button {
+    margin: auto;
+    padding: 0.5em 1em;
+    color: white;
+    font-size: .8em;
+    background-color: #4CAF50;  /* or any other color you like */
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
 
 .keyboard-button,
 .circle {
@@ -157,11 +252,12 @@ body {
     box-shadow: none;
 }
 
-.user-stats,
 .color-states {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     margin-top: 0.5em;
-    text-align: left;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 .color-key span {
@@ -169,87 +265,43 @@ body {
     height: 1.2em;
     border-radius: 50%;
     margin-right: 0.5em;
-    display: flex;
+    display: -webkit-inline-box;
 }
 
-#shareButton {
-    display: none;
-    margin: auto;
-    padding: 0.5em 1em;
-    color: white;
-    background-color: #4CAF50;  /* or any other color you like */
-    border: none;
-    border-radius: 0.5em;
-    cursor: pointer;
-    box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.1);
-}
 
-/* Additional rules */
-.stat-title {
-    display: inline-block;
-    width: 150px;
-}
-
-/* Your existing CSS */
 
 @media (max-width: 375px) {
-/* Adjustments for 375x667 screen */
+    /* Adjustments for 375x667 screen */
+    
+    .container .title {
+        font-size: 1.5em;
+    }
 
-/* Text size changes */
-.description,
-.guesses-left,
-.result-text,
-.user-stats p {
-    font-size: 0.6em;
-}
-.title {
-    font-size: 1.2em;
-}
+    .container .color-states {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.5em;
+    }
 
-.color-states {
-    margin-top: auto;
-    text-align: left;
-    font-size: 0.6em;
-}
-
-.color-key span {
-    width: 0.8em;
-    height: 0.8em;
-    border-radius: 50%;
-}
-
-/* Feedback and game-stats container */
-.feedback-container,
-.game-stats {
-    width: 100%;
-    font-size: 0.6em;
-}
-
-/* Main container */
-.container {
-    padding: 0.4em;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-/* Buttons and input fields */
-.submit-button,
-#resetButton,
-.guess-input {
-    padding: 0.3em;
-}
-
-/* Number and circle buttons */
-.keyboard-button,
-.circle {
-    width: 1.5em;
-    height: 1.5em;
-}
-
-/* Additional rules */
-.stat-title {
-    width: auto;
-}
+    /* Main container */
+    .container {
+        padding: 0.4em;
+        max-width: inherit;
+        max-height: inherit;
+    }
+    
+    /*   Buttons   */
+    
+    .buttons {
+        font-size: .8em;
+    }
+    
+    .scrollable-content {
+    max-height: 50vh;  
+    max-width: 80vw;
+    overflow-y: auto;
+    }
 }
 
 @media (max-width: 428px) and (max-height: 926px) {
@@ -260,8 +312,7 @@ body {
     /* Text size changes */
     .description,
     .guesses-left,
-    .result-text,
-    .user-stats p {
+    .result-text {
         font-size: 0.7em;
     }
     .title {
@@ -295,7 +346,7 @@ body {
     }
 
     /* Buttons and input fields */
-    .submit-button,
+
     #resetButton,
     .guess-input {
         padding: 0.4em;
@@ -307,13 +358,30 @@ body {
         width: 1.5em;
         height: 1.5em;
     }
-    
-    /* Additional rules */
-    .stat-title {
-        width: auto;
-    }
 }
 
 
+/* Image */
 
+.image {
+/*     border-radius: 5px; */
+/*     border: 0; */
+/*     display: inline; */
+/*     position: fixed; */
+}
 
+    .image img {
+/*         border-radius: 5px; */
+        display: flex;
+    }
+
+    .image.avatar {
+/*         border-radius: 50%; */
+/*         overflow: hidden; */
+    }
+
+        .image.avatar img {
+/*             border-radius: 100%; */
+/*             display: flex; */
+            width: 10vw;
+        }

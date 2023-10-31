@@ -245,7 +245,7 @@ function generateNumberButtons() {
             // Enter (Submit) button
             if (item === '↵') {
                 button.addEventListener('click', function () {
-                    checkGuess()
+                    checkGuess();
                 });
             }
 

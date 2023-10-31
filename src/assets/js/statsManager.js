@@ -20,7 +20,7 @@ export default class StatsManager {
         } catch (e) {
             console.error("An error occurred while loading user stats:", e);
         }
-    }
+    };
 
     saveUserStats = () => {
         try {
@@ -31,7 +31,7 @@ export default class StatsManager {
         } catch (e) {
             console.error("An error occurred while saving user stats:", e);
         }
-    }
+    };
 
     clearStats = () => {
         try {
@@ -44,7 +44,7 @@ export default class StatsManager {
         } catch (e) {
             console.error("An error occurred while clearing stats:", e);
         }
-    }
+    };
 
     updateGameStats = () => {
         try {
@@ -60,5 +60,5 @@ export default class StatsManager {
         } catch (e) {
             console.error("An error occurred while updating game stats:", e);
         }
-    }
+    };
 }

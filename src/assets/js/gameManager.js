@@ -18,7 +18,7 @@ export default class GameManager {
         if (!this.isIPhone()) {  // Assuming isIPhone is also a method on this class
             document.getElementById('userGuess').focus();
         }
-    }
+    };
 
     attachEventListeners = () => {
         try {
@@ -53,7 +53,7 @@ export default class GameManager {
         } catch (e) {
             console.error("Error within attachEventListeners:", e);
         }
-    }
+    };
 
 
     isIPhone = () => {
@@ -63,7 +63,7 @@ export default class GameManager {
             console.error("Error within isIPhone:", e);
             return false;  // Default to false if an error occurs
         }
-    }
+    };
 
     handleBackspace = (inputString) => {
         try {
@@ -80,7 +80,7 @@ export default class GameManager {
             console.error("Error within handleBackspace:", e);
             return "";  // Return empty string if an error occurs
         }
-    }
+    };
 
     handleEnter = (event) => {
         try {
@@ -90,7 +90,7 @@ export default class GameManager {
         } catch (e) {
             console.error("Error within handleEnter:", e);
         }
-    }
+    };
 
 
     checkGuess = () => {
@@ -147,7 +147,7 @@ export default class GameManager {
         } catch (e) {
             console.error("Error occurred in checkGuess:", e);
         }
-    }
+    };
 
 
     displayFeedback = (feedback, userGuessArray) => {
@@ -182,7 +182,7 @@ export default class GameManager {
         } catch (e) {
             console.error("Error occurred in displayFeedback:", e);
         }
-    }
+    };
 
     updateGuessesLeft = () => {
         try {
@@ -197,13 +197,13 @@ export default class GameManager {
         } catch (e) {
             console.error("Error occurred in updateGuessesLeft:", e);
         }
-    }
+    };
 
 
     endGame = (isWinner) => {
         try {
             const userGuessElement = document.getElementById('userGuess');
-            const keyboardButtonElement = document.querySelector('.keyboard-button');
+            const keyboardButtonElement = document.querySelector('.keyboard-keys');
             const resetButtonElement = document.getElementById('resetButton');
             const resultMessageElement = document.getElementById('resultMessage');
             const shareButtonElement = document.getElementById('shareButton');
@@ -215,6 +215,7 @@ export default class GameManager {
 
             userGuessElement.disabled = true;
             keyboardButtonElement.disabled = true;
+            this.disableNumberButtons();
             resetButtonElement.style.display = 'block';
 
             // Assuming these are class properties. If they are not, you might need to adjust the code.
@@ -243,7 +244,7 @@ export default class GameManager {
         } catch (e) {
             console.error("An error occurred in endGame:", e);
         }
-    }
+    };
 
 
     resetGame = () => {
@@ -301,7 +302,7 @@ export default class GameManager {
         } catch (e) {
             console.error("An error occurred in resetGame:", e);
         }
-    }
+    };
 
 
     resetFeedbackContainers = () => {
@@ -418,7 +419,22 @@ export default class GameManager {
         } catch (e) {
             console.error("An error occurred in resetNumberButtons:", e);
         }
-    }
+    };
+
+    disableNumberButtons = () => {
+        try {
+            for (let i = 0; i <= 9; i++) {
+                let button = document.getElementById('btn' + i);
+                if (button) { // Check if the button actually exists
+                    button.disabled = true;
+                } else {
+                    console.warn(`Button with id 'btn${i}' not found.`);
+                }
+            }
+        } catch (e) {
+            console.error("An error occurred in resetNumberButtons:", e);
+        }
+    };
 
     updateNumberButtons = (userGuessArray) => {
         try {
@@ -471,7 +487,7 @@ export default class GameManager {
         } catch (e) {
             console.error("An error occurred in updateNumberButtons:", e);
         }
-    }
+    };
 
     shareResults = () => {
         try {
